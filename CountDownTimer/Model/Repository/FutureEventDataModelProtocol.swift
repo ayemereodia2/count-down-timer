@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol FutureEventDataProtocol {
+protocol FutureEventDataModelProtocol {
     func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void)
     func view() -> [FutureEventModel]
     func delete(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void)

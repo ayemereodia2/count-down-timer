@@ -79,12 +79,12 @@ class FutureEventRepositoryTest: XCTestCase {
 
 
 private class FutureEventRepositoryMock: FutureEventRepository {
-    override init(dataSource: FutureEventDataProtocol) {
+    override init(dataSource: FutureEventDataModelProtocol) {
         super.init(dataSource: dataSource)
     }
 }
 
-class FakeRealmDataBase: FutureEventDataProtocol {
+class FakeRealmDataBase: FutureEventDataModelProtocol {
     var createCount = 0
     var didCallCreate = false
     

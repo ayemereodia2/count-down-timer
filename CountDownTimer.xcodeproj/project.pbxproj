@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041AF24A28E37F8B00BD5136 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24928E37F8B00BD5136 /* HomeViewModel.swift */; };
+		041AF24E28E383BD00BD5136 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */; };
+		041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF25028E3878100BD5136 /* NewEventViewController.swift */; };
 		04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529128E263C200EB82A0 /* FutureEvent.swift */; };
 		04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529428E264E400EB82A0 /* FutureEventRealm.swift */; };
-		04EC529828E2655400EB82A0 /* FutureEventDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529728E2655400EB82A0 /* FutureEventDataProtocol.swift */; };
+		04EC529828E2655400EB82A0 /* FutureEventDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */; };
 		04EC529A28E266A100EB82A0 /* FutureEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529928E266A100EB82A0 /* FutureEventRepository.swift */; };
-		04EC52A228E26DF600EB82A0 /* CountDownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC52A128E26DF600EB82A0 /* CountDownTimerTests.swift */; };
 		04EC52A928E26EB000EB82A0 /* FutureEventRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC52A828E26EB000EB82A0 /* FutureEventRepositoryTest.swift */; };
 		04F4D3D228E1097800B84E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4D3D128E1097800B84E8D /* AppDelegate.swift */; };
 		04F4D3D428E1097800B84E8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4D3D328E1097800B84E8D /* SceneDelegate.swift */; };
-		04F4D3D628E1097800B84E8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4D3D528E1097800B84E8D /* ViewController.swift */; };
+		04F4D3D628E1097800B84E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4D3D528E1097800B84E8D /* HomeViewController.swift */; };
 		04F4D3D928E1097800B84E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3D728E1097800B84E8D /* Main.storyboard */; };
 		04F4D3DB28E1097900B84E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3DA28E1097900B84E8D /* Assets.xcassets */; };
 		04F4D3DE28E1097900B84E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3DC28E1097900B84E8D /* LaunchScreen.storyboard */; };
@@ -33,17 +35,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041AF24928E37F8B00BD5136 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		041AF25028E3878100BD5136 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		04EC529128E263C200EB82A0 /* FutureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEvent.swift; sourceTree = "<group>"; };
 		04EC529428E264E400EB82A0 /* FutureEventRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventRealm.swift; sourceTree = "<group>"; };
-		04EC529728E2655400EB82A0 /* FutureEventDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventDataProtocol.swift; sourceTree = "<group>"; };
+		04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventDataModelProtocol.swift; sourceTree = "<group>"; };
 		04EC529928E266A100EB82A0 /* FutureEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventRepository.swift; sourceTree = "<group>"; };
 		04EC529F28E26DF600EB82A0 /* CountDownTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountDownTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04EC52A128E26DF600EB82A0 /* CountDownTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimerTests.swift; sourceTree = "<group>"; };
 		04EC52A828E26EB000EB82A0 /* FutureEventRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventRepositoryTest.swift; sourceTree = "<group>"; };
 		04F4D3CE28E1097800B84E8D /* CountDownTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountDownTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4D3D128E1097800B84E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F4D3D328E1097800B84E8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04F4D3D528E1097800B84E8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04F4D3D528E1097800B84E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04F4D3D828E1097800B84E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04F4D3DA28E1097900B84E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F4D3DD28E1097900B84E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041AF24828E37F6900BD5136 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				041AF24928E37F8B00BD5136 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		041AF24B28E3838100BD5136 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04EC52A828E26EB000EB82A0 /* FutureEventRepositoryTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		041AF24C28E3839D00BD5136 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		041AF24F28E3875A00BD5136 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F4D3D528E1097800B84E8D /* HomeViewController.swift */,
+				041AF25028E3878100BD5136 /* NewEventViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04EC528F28E2639300EB82A0 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +139,7 @@
 		04EC529628E2652C00EB82A0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				04EC529728E2655400EB82A0 /* FutureEventDataProtocol.swift */,
+				04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */,
 				04EC529928E266A100EB82A0 /* FutureEventRepository.swift */,
 			);
 			path = Repository;
@@ -111,8 +148,8 @@
 		04EC52A028E26DF600EB82A0 /* CountDownTimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				04EC52A128E26DF600EB82A0 /* CountDownTimerTests.swift */,
-				04EC52A828E26EB000EB82A0 /* FutureEventRepositoryTest.swift */,
+				041AF24C28E3839D00BD5136 /* ViewModel */,
+				041AF24B28E3838100BD5136 /* Model */,
 			);
 			path = CountDownTimerTests;
 			sourceTree = "<group>";
@@ -140,9 +177,10 @@
 		04F4D3D028E1097800B84E8D /* CountDownTimer */ = {
 			isa = PBXGroup;
 			children = (
+				041AF24F28E3875A00BD5136 /* View */,
+				041AF24828E37F6900BD5136 /* ViewModel */,
 				04EC529028E2639F00EB82A0 /* Model */,
 				04EC528F28E2639300EB82A0 /* App */,
-				04F4D3D528E1097800B84E8D /* ViewController.swift */,
 				04F4D3D728E1097800B84E8D /* Main.storyboard */,
 				04F4D3DA28E1097900B84E8D /* Assets.xcassets */,
 				04F4D3DC28E1097900B84E8D /* LaunchScreen.storyboard */,
@@ -313,8 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EC52A228E26DF600EB82A0 /* CountDownTimerTests.swift in Sources */,
 				04EC52A928E26EB000EB82A0 /* FutureEventRepositoryTest.swift in Sources */,
+				041AF24E28E383BD00BD5136 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +360,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F4D3D628E1097800B84E8D /* ViewController.swift in Sources */,
+				04F4D3D628E1097800B84E8D /* HomeViewController.swift in Sources */,
 				04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */,
 				04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */,
+				041AF24A28E37F8B00BD5136 /* HomeViewModel.swift in Sources */,
+				041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */,
 				04EC529A28E266A100EB82A0 /* FutureEventRepository.swift in Sources */,
-				04EC529828E2655400EB82A0 /* FutureEventDataProtocol.swift in Sources */,
+				04EC529828E2655400EB82A0 /* FutureEventDataModelProtocol.swift in Sources */,
 				04F4D3D228E1097800B84E8D /* AppDelegate.swift in Sources */,
 				04F4D3D428E1097800B84E8D /* SceneDelegate.swift in Sources */,
 			);

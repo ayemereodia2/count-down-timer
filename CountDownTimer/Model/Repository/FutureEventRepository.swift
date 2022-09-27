@@ -6,12 +6,25 @@
 //
 
 import Foundation
-import UIKit
 
-class FutureEventRepository {
-    private let dataSource: FutureEventDataProtocol
+protocol HomeRepositoryProtocol {
+    func view() -> [FutureEvent]
+}
+
+protocol NewEventRepositoryProtocol {
+    func create(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> ())
+}
+
+protocol FutureEventRepositoryProtocol: HomeRepositoryProtocol, NewEventRepositoryProtocol {
+    func delete(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> ())
+    func edit(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> Void)
+}
+
+class FutureEventRepository: FutureEventRepositoryProtocol {
     
-    init(dataSource: FutureEventDataProtocol) {
+    private let dataSource: FutureEventDataModelProtocol
+    
+    init(dataSource: FutureEventDataModelProtocol) {
         self.dataSource = dataSource
     }
     

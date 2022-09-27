@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FutureEventRealm: FutureEventDataProtocol {
+class FutureEventRealm: FutureEventDataModelProtocol {
     private let realm: Realm = {
         try! Realm()
     }()
