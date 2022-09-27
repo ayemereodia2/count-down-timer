@@ -31,7 +31,9 @@ class FutureEventRepository {
         }
     }
     
-    func edit(futureEvent: FutureEvent) {
-        self.dataSource.edit(eventModel: FutureEventModel.init(futureEvent: futureEvent))
+    func edit(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> Void) {
+        self.dataSource.edit(eventModel: FutureEventModel.init(futureEvent: futureEvent)) { editStatus in
+            completionHandler(editStatus)
+        }
     }
 }

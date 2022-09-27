@@ -28,7 +28,8 @@ class FutureEventRealm: FutureEventDataProtocol {
     }
     
     func view() -> [FutureEventModel] {
-        []
+        let models = realm.objects(FutureEventModel.self)
+       return models.map { $0 }
     }
     
     func delete(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
@@ -43,9 +44,15 @@ class FutureEventRealm: FutureEventDataProtocol {
         completionHandler(false)
     }
     
-    func edit(eventModel: FutureEventModel) {
-        
+    func edit(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
+        do {
+            try realm.write {
+                realm.add(eventModel, update: .modified)
+                completionHandler(true)
+            }
+        } catch {
+            completionHandler(false)
+        }
+        completionHandler(false)
     }
-    
-    // connect to realm here
 }

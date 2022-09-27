@@ -39,7 +39,7 @@ class FutureEventRepositoryTest: XCTestCase {
         XCTAssertEqual(dataSource.viewCount, 1)
     }
     
-    func test_delete_calls_realm_delete_with_result() {
+    func test_delete_calls_realm_delete_returns_with_completion() {
         dataSource = FakeRealmDataBase(deleteStatus: true)
         let sut = FutureEventRepositoryMock(dataSource: dataSource)
         let event = FutureEvent(name: "Birthday", dateTime: Date(), isDone: true)
@@ -55,6 +55,24 @@ class FutureEventRepositoryTest: XCTestCase {
         
         XCTAssertTrue(dataSource.didCallDelete)
         XCTAssertEqual(dataSource.deleteCount, 1)
+    }
+    
+    func test_edit_calls_realm_edit_returns_with_completion() {
+        dataSource = FakeRealmDataBase(editStatus: true)
+        let sut = FutureEventRepositoryMock(dataSource: dataSource)
+        let event = FutureEvent(name: "Birthday", dateTime: Date(), isDone: true)
+        let expectation = XCTestExpectation(description: "data was not edited")
+
+        sut.edit(futureEvent: event) { status in
+            expectation.fulfill()
+            XCTAssertTrue(status)
+        }
+        
+        
+        wait(for: [expectation], timeout: 1)
+        
+        XCTAssertTrue(dataSource.didCallEdit)
+        XCTAssertEqual(dataSource.editCount, 1)
     }
 
 }
@@ -76,13 +94,18 @@ class FakeRealmDataBase: FutureEventDataProtocol {
     var deleteCount = 0
     var didCallDelete = false
     
+    var editCount = 0
+    var didCallEdit = false
+    
     private var status: Bool = false
     private var saveStatus: Bool = false
     private var deleteStatus: Bool = false
+    private var editStatus: Bool = false
 
-    init(status: Bool = false, deleteStatus: Bool = false) {
+    init(status: Bool = false, deleteStatus: Bool = false, editStatus: Bool = false) {
         self.status = status
         self.deleteStatus = deleteStatus
+        self.editStatus = editStatus
     }
     
     func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
@@ -103,8 +126,10 @@ class FakeRealmDataBase: FutureEventDataProtocol {
         completionHandler(deleteStatus)
     }
     
-    func edit(eventModel: FutureEventModel) {
-        
+    func edit(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
+        editCount += 1
+        didCallEdit = true
+        completionHandler(editStatus)
     }
     
     private func fakeFutureEventModel() -> [FutureEventModel] {
