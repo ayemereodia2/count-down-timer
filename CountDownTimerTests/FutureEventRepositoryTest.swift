@@ -38,6 +38,24 @@ class FutureEventRepositoryTest: XCTestCase {
         XCTAssertTrue(dataSource.didCallView)
         XCTAssertEqual(dataSource.viewCount, 1)
     }
+    
+    func test_delete_calls_realm_delete_with_result() {
+        dataSource = FakeRealmDataBase(deleteStatus: true)
+        let sut = FutureEventRepositoryMock(dataSource: dataSource)
+        let event = FutureEvent(name: "Birthday", dateTime: Date(), isDone: true)
+        let expectation = XCTestExpectation(description: "data was not deleted")
+
+        sut.delete(futureEvent: event) { status in
+            expectation.fulfill()
+            XCTAssertTrue(status)
+        }
+        
+        
+        wait(for: [expectation], timeout: 1)
+        
+        XCTAssertTrue(dataSource.didCallDelete)
+        XCTAssertEqual(dataSource.deleteCount, 1)
+    }
 
 }
 
@@ -54,13 +72,20 @@ class FakeRealmDataBase: FutureEventDataProtocol {
     
     var viewCount = 0
     var didCallView = false
-    private var status: Bool = false
     
-    init(status: Bool = false) {
+    var deleteCount = 0
+    var didCallDelete = false
+    
+    private var status: Bool = false
+    private var saveStatus: Bool = false
+    private var deleteStatus: Bool = false
+
+    init(status: Bool = false, deleteStatus: Bool = false) {
         self.status = status
+        self.deleteStatus = deleteStatus
     }
     
-    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void) {
+    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
         createCount += 1
         didCallCreate = true
         completionHandler(status)
@@ -72,8 +97,10 @@ class FakeRealmDataBase: FutureEventDataProtocol {
         return fakeFutureEventModel()
     }
     
-    func delete(eventModel: FutureEventModel) -> Bool {
-        false
+    func delete(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
+        deleteCount += 1
+        didCallDelete = true
+        completionHandler(deleteStatus)
     }
     
     func edit(eventModel: FutureEventModel) {

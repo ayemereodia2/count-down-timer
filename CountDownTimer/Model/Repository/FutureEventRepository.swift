@@ -25,8 +25,10 @@ class FutureEventRepository {
         self.dataSource.view().map { FutureEvent.init(model: $0) }
     }
     
-    func delete(futureEvent: FutureEvent) -> Bool {
-        self.dataSource.delete(eventModel: FutureEventModel.init(futureEvent: futureEvent))
+    func delete(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> ()) {
+        self.dataSource.delete(eventModel: FutureEventModel.init(futureEvent: futureEvent)) { deleteStatus in
+            completionHandler(deleteStatus)
+        }
     }
     
     func edit(futureEvent: FutureEvent) {

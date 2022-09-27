@@ -15,7 +15,7 @@ class FutureEventRealm: FutureEventDataProtocol {
     
 
     
-    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void) {
+    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
         do {
             try realm.write {
                 realm.add(eventModel)
@@ -31,8 +31,16 @@ class FutureEventRealm: FutureEventDataProtocol {
         []
     }
     
-    func delete(eventModel: FutureEventModel) -> Bool {
-        true
+    func delete(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
+        do {
+            try realm.write {
+                realm.delete(eventModel)
+                completionHandler(true)
+            }
+        } catch {
+            completionHandler(false)
+        }
+        completionHandler(false)
     }
     
     func edit(eventModel: FutureEventModel) {
