@@ -22,6 +22,14 @@ class FutureEventRepositoryTest: XCTestCase {
         XCTAssertTrue(dataSource.didCallCreate)
         XCTAssertEqual(dataSource.createCount, 1)
     }
+    
+    func test_view_calls_realm_view_with_result() {
+        let sut = FutureEventRepositoryMock(dataSource: dataSource)
+        let response = sut.view()
+        XCTAssertEqual(response.count, 3)
+        XCTAssertTrue(dataSource.didCallView)
+        XCTAssertEqual(dataSource.viewCount, 1)
+    }
 
 }
 
@@ -36,13 +44,18 @@ class FakeRealmDataBase: FutureEventDataProtocol {
     var createCount = 0
     var didCallCreate = false
     
+    var viewCount = 0
+    var didCallView = false
+    
     func create(eventModel: FutureEventModel) {
         createCount += 1
         didCallCreate = true
     }
     
     func view() -> [FutureEventModel] {
-        []
+        viewCount += 1
+        didCallView = true
+        return fakeFutureEventModel()
     }
     
     func delete(eventModel: FutureEventModel) -> Bool {
@@ -53,5 +66,8 @@ class FakeRealmDataBase: FutureEventDataProtocol {
         
     }
     
+    private func fakeFutureEventModel() -> [FutureEventModel] {
+        [FutureEventModel(),FutureEventModel(), FutureEventModel()]
+    }
     
 }
