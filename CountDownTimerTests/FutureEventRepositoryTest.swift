@@ -15,9 +15,17 @@ class FutureEventRepositoryTest: XCTestCase {
     }
 
     func test_create_call_realm_create_method() {
+        dataSource = FakeRealmDataBase(status: true)
         let sut = FutureEventRepositoryMock(dataSource: dataSource)
         let event = FutureEvent(name: "Birthday", dateTime: Date(), isDone: true)
-        sut.create(futureEvent: event)
+        let expectation = XCTestExpectation(description: "data was not saved")
+        
+        sut.create(futureEvent: event) { status in
+            expectation.fulfill()
+            XCTAssertTrue(status)
+        }
+        
+        wait(for: [expectation], timeout: 1)
         
         XCTAssertTrue(dataSource.didCallCreate)
         XCTAssertEqual(dataSource.createCount, 1)
@@ -46,10 +54,16 @@ class FakeRealmDataBase: FutureEventDataProtocol {
     
     var viewCount = 0
     var didCallView = false
+    private var status: Bool = false
     
-    func create(eventModel: FutureEventModel) {
+    init(status: Bool = false) {
+        self.status = status
+    }
+    
+    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void) {
         createCount += 1
         didCallCreate = true
+        completionHandler(status)
     }
     
     func view() -> [FutureEventModel] {

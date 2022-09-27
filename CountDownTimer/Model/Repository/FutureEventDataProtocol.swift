@@ -7,7 +7,7 @@
 
 import Foundation
 protocol FutureEventDataProtocol {
-    func create(eventModel: FutureEventModel)
+    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void)
     func view() -> [FutureEventModel]
     func delete(eventModel: FutureEventModel) -> Bool
     func edit(eventModel: FutureEventModel)

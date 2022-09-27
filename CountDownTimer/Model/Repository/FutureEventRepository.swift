@@ -15,8 +15,10 @@ class FutureEventRepository {
         self.dataSource = dataSource
     }
     
-    func create(futureEvent: FutureEvent) {
-        self.dataSource.create(eventModel: FutureEventModel.init(futureEvent: futureEvent))
+    func create(futureEvent: FutureEvent, completionHandler: @escaping (Bool) -> ()) {
+        self.dataSource.create(eventModel: FutureEventModel.init(futureEvent: futureEvent)) { status in
+            completionHandler(status)
+        }
     }
     
     func view() -> [FutureEvent] {

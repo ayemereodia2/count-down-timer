@@ -15,14 +15,16 @@ class FutureEventRealm: FutureEventDataProtocol {
     
 
     
-    func create(eventModel: FutureEventModel) {
+    func create(eventModel: FutureEventModel, completionHandler: @escaping (Bool)->Void) {
         do {
             try realm.write {
                 realm.add(eventModel)
+                completionHandler(true)
             }
         } catch {
-            
+            completionHandler(false)
         }
+        completionHandler(false)
     }
     
     func view() -> [FutureEventModel] {
