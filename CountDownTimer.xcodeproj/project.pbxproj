@@ -10,6 +10,7 @@
 		041AF24A28E37F8B00BD5136 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24928E37F8B00BD5136 /* HomeViewModel.swift */; };
 		041AF24E28E383BD00BD5136 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */; };
 		041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF25028E3878100BD5136 /* NewEventViewController.swift */; };
+		044555C628EE5081001B1299 /* CountDownClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044555C528EE5081001B1299 /* CountDownClock.swift */; };
 		04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529128E263C200EB82A0 /* FutureEvent.swift */; };
 		04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529428E264E400EB82A0 /* FutureEventRealm.swift */; };
 		04EC529828E2655400EB82A0 /* FutureEventDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */; };
@@ -38,6 +39,7 @@
 		041AF24928E37F8B00BD5136 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		041AF25028E3878100BD5136 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		044555C528EE5081001B1299 /* CountDownClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownClock.swift; sourceTree = "<group>"; };
 		04EC529128E263C200EB82A0 /* FutureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEvent.swift; sourceTree = "<group>"; };
 		04EC529428E264E400EB82A0 /* FutureEventRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventRealm.swift; sourceTree = "<group>"; };
 		04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventDataModelProtocol.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				041AF24928E37F8B00BD5136 /* HomeViewModel.swift */,
+				044555C528EE5081001B1299 /* CountDownClock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044555C628EE5081001B1299 /* CountDownClock.swift in Sources */,
 				04F4D3D628E1097800B84E8D /* HomeViewController.swift in Sources */,
 				04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */,
 				04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */,
