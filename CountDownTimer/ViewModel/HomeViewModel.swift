@@ -8,14 +8,10 @@
 import Foundation
 import UIKit
 
-protocol HomeViewDelegate: AnyObject {
-    func showSavedEvents(events: [FutureEvent])
-}
-
 class HomeViewModel {
     private let homeRepository: HomeRepositoryProtocol
-    weak var delegate: HomeViewDelegate?
     private var events: [FutureEvent]?
+    weak var delegate: HomeViewDelegate?
     
     init(homeRepository: HomeRepositoryProtocol) {
         self.homeRepository = homeRepository
@@ -23,7 +19,6 @@ class HomeViewModel {
     
     func loadInitialView() {
         events = homeRepository.view()
-        //delegate?.showSavedEvents(events: events)
     }
     
     func numberOfRow(tableView: UITableView, section: Int) -> Int {

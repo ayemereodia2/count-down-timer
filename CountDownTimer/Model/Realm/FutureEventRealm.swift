@@ -24,7 +24,6 @@ class FutureEventRealm: FutureEventDataModelProtocol {
         } catch {
             completionHandler(false)
         }
-        completionHandler(false)
     }
     
     func view() -> [FutureEventModel] {
@@ -41,7 +40,6 @@ class FutureEventRealm: FutureEventDataModelProtocol {
         } catch {
             completionHandler(false)
         }
-        completionHandler(false)
     }
     
     func edit(eventModel: FutureEventModel, completionHandler: @escaping (Bool) -> Void) {
@@ -53,6 +51,5 @@ class FutureEventRealm: FutureEventDataModelProtocol {
         } catch {
             completionHandler(false)
         }
-        completionHandler(false)
     }
 }

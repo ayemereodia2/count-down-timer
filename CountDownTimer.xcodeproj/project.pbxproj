@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DF2C328F0EF5500F2BCC4 /* NewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DF2C228F0EF5500F2BCC4 /* NewEventViewModel.swift */; };
 		041AF24A28E37F8B00BD5136 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24928E37F8B00BD5136 /* HomeViewModel.swift */; };
 		041AF24E28E383BD00BD5136 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */; };
 		041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF25028E3878100BD5136 /* NewEventViewController.swift */; };
@@ -22,7 +23,7 @@
 		04F4D3D928E1097800B84E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3D728E1097800B84E8D /* Main.storyboard */; };
 		04F4D3DB28E1097900B84E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3DA28E1097900B84E8D /* Assets.xcassets */; };
 		04F4D3DE28E1097900B84E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4D3DC28E1097900B84E8D /* LaunchScreen.storyboard */; };
-		ACFC8712C228208B741E8F7E /* Pods_CountDownTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74836F65DA1657579276C50B /* Pods_CountDownTimer.framework */; };
+		67935CECBEDF20388399AF32 /* Pods_CountDownTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C1383FAE4C98531BE37FE4 /* Pods_CountDownTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040DF2C228F0EF5500F2BCC4 /* NewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewModel.swift; sourceTree = "<group>"; };
 		041AF24928E37F8B00BD5136 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		041AF24D28E383BD00BD5136 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		041AF25028E3878100BD5136 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +56,9 @@
 		04F4D3DA28E1097900B84E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F4D3DD28E1097900B84E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F4D3DF28E1097900B84E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B911079DA6A50CEA60F892B /* Pods-CountDownTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountDownTimer.debug.xcconfig"; path = "Target Support Files/Pods-CountDownTimer/Pods-CountDownTimer.debug.xcconfig"; sourceTree = "<group>"; };
-		74836F65DA1657579276C50B /* Pods_CountDownTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountDownTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8015377959C05139A149B547 /* Pods-CountDownTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountDownTimer.release.xcconfig"; path = "Target Support Files/Pods-CountDownTimer/Pods-CountDownTimer.release.xcconfig"; sourceTree = "<group>"; };
+		5900DFD1B04F4B25D686CE3A /* Pods-CountDownTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountDownTimer.debug.xcconfig"; path = "Target Support Files/Pods-CountDownTimer/Pods-CountDownTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		CAA167B591C7FB2B2A5372A2 /* Pods-CountDownTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountDownTimer.release.xcconfig"; path = "Target Support Files/Pods-CountDownTimer/Pods-CountDownTimer.release.xcconfig"; sourceTree = "<group>"; };
+		E4C1383FAE4C98531BE37FE4 /* Pods_CountDownTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountDownTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACFC8712C228208B741E8F7E /* Pods_CountDownTimer.framework in Frameworks */,
+				67935CECBEDF20388399AF32 /* Pods_CountDownTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,7 @@
 			children = (
 				041AF24928E37F8B00BD5136 /* HomeViewModel.swift */,
 				044555C528EE5081001B1299 /* CountDownClock.swift */,
+				040DF2C228F0EF5500F2BCC4 /* NewEventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -163,8 +166,8 @@
 				04F4D3D028E1097800B84E8D /* CountDownTimer */,
 				04EC52A028E26DF600EB82A0 /* CountDownTimerTests */,
 				04F4D3CF28E1097800B84E8D /* Products */,
-				1BF5F0F3283CAEF8C49F52F6 /* Pods */,
-				E5BF0FBDEB5677BE57C88ED6 /* Frameworks */,
+				F274263AB2926E6F659C5D6B /* Pods */,
+				52A87F76EC651F08CADA45F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,21 +195,21 @@
 			path = CountDownTimer;
 			sourceTree = "<group>";
 		};
-		1BF5F0F3283CAEF8C49F52F6 /* Pods */ = {
+		52A87F76EC651F08CADA45F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B911079DA6A50CEA60F892B /* Pods-CountDownTimer.debug.xcconfig */,
-				8015377959C05139A149B547 /* Pods-CountDownTimer.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		E5BF0FBDEB5677BE57C88ED6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				74836F65DA1657579276C50B /* Pods_CountDownTimer.framework */,
+				E4C1383FAE4C98531BE37FE4 /* Pods_CountDownTimer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F274263AB2926E6F659C5D6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5900DFD1B04F4B25D686CE3A /* Pods-CountDownTimer.debug.xcconfig */,
+				CAA167B591C7FB2B2A5372A2 /* Pods-CountDownTimer.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +370,7 @@
 				04F4D3D628E1097800B84E8D /* HomeViewController.swift in Sources */,
 				04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */,
 				04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */,
+				040DF2C328F0EF5500F2BCC4 /* NewEventViewModel.swift in Sources */,
 				041AF24A28E37F8B00BD5136 /* HomeViewModel.swift in Sources */,
 				041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */,
 				04EC529A28E266A100EB82A0 /* FutureEventRepository.swift in Sources */,
@@ -413,6 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				ENABLE_BITCODE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woxi.app.CountDownTimerTests;
@@ -431,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				ENABLE_BITCODE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woxi.app.CountDownTimerTests;
@@ -560,13 +566,15 @@
 		};
 		04F4D3E328E1097900B84E8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B911079DA6A50CEA60F892B /* Pods-CountDownTimer.debug.xcconfig */;
+			baseConfigurationReference = 5900DFD1B04F4B25D686CE3A /* Pods-CountDownTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CountDownTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Futodoro;
@@ -590,13 +598,14 @@
 		};
 		04F4D3E428E1097900B84E8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8015377959C05139A149B547 /* Pods-CountDownTimer.release.xcconfig */;
+			baseConfigurationReference = CAA167B591C7FB2B2A5372A2 /* Pods-CountDownTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				ENABLE_BITCODE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CountDownTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Futodoro;

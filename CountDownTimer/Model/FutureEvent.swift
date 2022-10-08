@@ -23,7 +23,7 @@ extension FutureEvent {
 }
 
 class FutureEventModel: Object {
-    @Persisted(primaryKey: true) var id = 0
+    @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var dateTime: Date
     @Persisted var isDone: Bool
