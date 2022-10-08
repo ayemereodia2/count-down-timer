@@ -23,7 +23,6 @@ class HomeViewModelTest: XCTestCase {
         XCTAssertTrue(delegate.showSavedEventsDidCall)
         XCTAssertEqual(delegate.showSavedEventsDidCount, 1)
     }
-
 }
 
 
@@ -49,8 +48,16 @@ private class HomeViewDelegateMock: HomeViewDelegate {
     var showSavedEventsDidCall = false
     var showSavedEventsDidCount = 0
 
+    var reloadTableViewDidCall = false
+    var reloadTableViewCount = 0
+    
     func showSavedEvents(events: [FutureEvent]) {
         showSavedEventsDidCall = true
         showSavedEventsDidCount += 1
+    }
+    
+    func reloadTableView() {
+         reloadTableViewDidCall = true
+         reloadTableViewCount += 1
     }
 }

@@ -58,6 +58,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeViewDelegate {
     func reloadTableView() {
         viewModel.loadInitialView()
-        //self.homeTableView
+        self.homeTableView.reloadData()
     }
 }
