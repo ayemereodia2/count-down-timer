@@ -38,3 +38,13 @@ extension FutureEventModel {
     }
 }
 
+
+extension FutureEvent {
+    init?(aps: [String: AnyObject]) {
+        guard let name = aps["name"] as? String,
+              let dateTime = aps["dateTime"] as? Date,
+              let isDone = aps["isDone"] as? Bool
+        else { return nil }
+        self.init(name: name, dateTime: dateTime, isDone: isDone)
+    }
+}
