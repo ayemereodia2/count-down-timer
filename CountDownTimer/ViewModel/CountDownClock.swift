@@ -19,19 +19,27 @@ class CountDownTimer {
     private var days: Int = 0
     weak var delegate: CountDownTimerDelegate?
     private var event: FutureEvent
+    var timer: Timer?
 
     init (event: FutureEvent) {
         self.event = event
     }
     
     func startTimer() {
-        RunLoop.current.add(timer, forMode: .common)
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                         target: self,
+                                         selector: #selector(updateCounter),
+                                         userInfo: nil, repeats: true)
+        timer?.tolerance = 0.1
+        if let timer = timer {
+            RunLoop.current.add(timer, forMode: .common)
+        }
         dateComponent(from: self.event)
     }
     
     private func dateComponent(from event: FutureEvent) {
         var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = .init(secondsFromGMT: 1)!
+        calendar.timeZone = .current
         let breakdown = calendar.numberOfDaysBetween(Date.now, and: event.dateTime)
         if let days = breakdown.day {
             self.weeks = days / 7
@@ -39,19 +47,10 @@ class CountDownTimer {
             delegate?.showPeriod(days: self.days, weeks: self.weeks)
         }
         
-        self.hours = 12
-        self.minutes =  60
-        self.seconds =  60
+        self.hours = 24 - Calendar.current.component(.hour, from: event.dateTime)
+        self.minutes =  Calendar.current.component(.minute, from: event.dateTime)
+        self.seconds =  Calendar.current.component(.second, from: event.dateTime)
     }
-    
-   lazy var timer: Timer = {
-       let timer = Timer.scheduledTimer(timeInterval: 1.0,
-                                        target: self,
-                                        selector: #selector(updateCounter),
-                                        userInfo: nil, repeats: true)
-        timer.tolerance = 0.1
-        return timer
-    }()
     
     @objc func updateCounter() {
         if minutes == 60 {
@@ -81,8 +80,8 @@ class CountDownTimer {
     }
     
     deinit {
-//        timer?.invalidate()
-//        timer = nil
+        timer?.invalidate()
+        timer = nil
     }
 }
 

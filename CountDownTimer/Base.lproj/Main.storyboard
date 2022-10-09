@@ -160,6 +160,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPe-6d-2C1">
                                                 <rect key="frame" x="0.0" y="0.0" width="64.5" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64.5" id="OKg-B9-ZgD"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                                 <connections>
@@ -168,6 +171,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3s1-nC-imY">
                                                 <rect key="frame" x="255.5" y="0.0" width="64.5" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64.5" id="hg5-Ni-9h8"/>
+                                                </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel">
@@ -178,8 +184,15 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="LA8-tb-i4h"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="bZf-Hl-jSR" firstAttribute="leading" secondItem="QOq-GC-QKl" secondAttribute="leading" constant="4.5" id="AzZ-tT-qZk"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZf-Hl-jSR" secondAttribute="trailing" constant="4.5" id="xjj-29-Uu7"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZVs-j9-qAa"/>

@@ -21,12 +21,6 @@ class NewEventViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var eventNameTextField: UITextField!
     
-    fileprivate func configureBackingView() {
-        borderView.layer.borderColor = UIColor.black.cgColor
-        borderView.layer.cornerRadius = 6
-        borderView.layer.borderWidth = 2
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventNameTextField.delegate = self
