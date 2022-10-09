@@ -7,28 +7,48 @@
 
 import Foundation
 protocol CountDownTimerDelegate: AnyObject {
-    func show(_ counter: String)
+    func show(counter: String)
+    func showPeriod(days: Int, weeks: Int)
 }
 
 class CountDownTimer {
-    
+    private var hours: Int = 0
+    private var minutes: Int = 0
+    private var seconds: Int = 0
+    private var weeks: Int = 0
+    private var days: Int = 0
     weak var delegate: CountDownTimerDelegate?
-    private var hours: Int
-    private var minutes: Int
-    private var seconds: Int
-    
-    init (hours: Int, minutes: Int, seconds: Int) {
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
+    private var event: FutureEvent
+
+    init (event: FutureEvent) {
+        self.event = event
     }
     
-   lazy var timer: Timer? = {
+    func startTimer() {
+        RunLoop.current.add(timer, forMode: .common)
+        dateComponent(from: self.event)
+    }
+    
+    private func dateComponent(from event: FutureEvent) {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .init(secondsFromGMT: 1)!
+        let breakdown = calendar.numberOfDaysBetween(Date.now, and: event.dateTime)
+        if let days = breakdown.day {
+            self.weeks = days / 7
+            self.days = days % 7
+            delegate?.showPeriod(days: self.days, weeks: self.weeks)
+        }
+        
+        self.hours = 12
+        self.minutes =  60
+        self.seconds =  60
+    }
+    
+   lazy var timer: Timer = {
        let timer = Timer.scheduledTimer(timeInterval: 1.0,
                                         target: self,
                                         selector: #selector(updateCounter),
                                         userInfo: nil, repeats: true)
-        RunLoop.current.add(timer, forMode: .common)
         timer.tolerance = 0.1
         return timer
     }()
@@ -57,11 +77,22 @@ class CountDownTimer {
             seconds -= 1
         }
         
-        delegate?.show("\(hours):\(minutes):\(seconds)")
+        delegate?.show(counter: "\(hours):\(minutes):\(seconds)")
     }
     
     deinit {
-        timer?.invalidate()
-        timer = nil
+//        timer?.invalidate()
+//        timer = nil
+    }
+}
+
+
+extension Calendar {
+    func numberOfDaysBetween(_ from: Date, and to: Date) -> DateComponents {
+        let fromDate = startOfDay(for: from)
+        let toDate = startOfDay(for: to)
+        let numberOfDays = dateComponents([.day, .hour, .minute, .second], from: fromDate, to: toDate)
+        
+        return numberOfDays
     }
 }

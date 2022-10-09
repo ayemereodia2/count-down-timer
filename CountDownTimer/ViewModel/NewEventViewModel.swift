@@ -14,6 +14,7 @@ protocol NewEventViewDelegate: AnyObject {
 
 protocol HomeViewDelegate: AnyObject {
     func reloadTableView()
+    func setTitle(title: String)
 }
 
 class NewEventViewModel {

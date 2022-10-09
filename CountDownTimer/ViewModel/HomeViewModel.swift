@@ -21,6 +21,18 @@ class HomeViewModel {
         events = homeRepository.view()
     }
     
+    func setTitle() {
+        delegate?.setTitle(title: "Futo Timer")
+    }
+    
+    func item(at index: IndexPath) -> FutureEvent? {
+        guard let events = events else {
+            return nil
+        }
+
+        return events[index.row]
+    }
+    
     func numberOfRow(tableView: UITableView, section: Int) -> Int {
         guard let events = events else {
            return 0
@@ -34,7 +46,20 @@ class HomeViewModel {
         }
 
         cell.textLabel?.text = events[indexPath.row].name
-        cell.detailTextLabel?.text = "\(events[indexPath.row].dateTime)"
+        cell.detailTextLabel?.text = (formatDate(date: (events[indexPath.row].dateTime)))
         return cell
+    }
+    
+    func formatDate(date: Date) -> String {
+        return date.getFormattedDate(format: "yyyy-MM-dd")
+    }
+}
+
+
+extension Date {
+    func getFormattedDate(format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
     }
 }

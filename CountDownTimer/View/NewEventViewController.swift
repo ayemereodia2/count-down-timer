@@ -14,11 +14,18 @@ protocol ViewMonitor: AnyObject {
 class NewEventViewController: UIViewController {
     var viewModel: NewEventViewModel!
         
+    @IBOutlet weak var borderView: BackingView!
     @IBOutlet weak var setDateButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var eventNameTextField: UITextField!
+    
+    fileprivate func configureBackingView() {
+        borderView.layer.borderColor = UIColor.black.cgColor
+        borderView.layer.cornerRadius = 6
+        borderView.layer.borderWidth = 2
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
