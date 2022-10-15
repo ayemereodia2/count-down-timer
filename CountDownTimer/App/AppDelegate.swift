@@ -19,18 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if
             let notification = notificationOption as? [String: AnyObject],
             let aps = notification["aps"] as? [String: AnyObject],
-            let event = FutureEvent(aps: aps) {
-            
-            let counter = CountDownTimer(event: event)
-            let viewModel = CountDownViewModel(event: event, countDownTimer: counter)
-            
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            guard let countDownViewController = storyBoard.instantiateViewController(withIdentifier: "CountDownViewController") as? CountDownViewController else { return false }
-            
-            viewModel.delegate = countDownViewController
-            countDownViewController.viewModel = viewModel
-            countDownViewController.modalPresentationStyle = .formSheet
-            (window?.rootViewController as? UINavigationController)?.present(countDownViewController, animated: true)
+            let reminderEvent = FutureEvent(aps: aps) {
+           return displayDurationFor(event: reminderEvent)
         }
         
         return true
@@ -64,6 +54,20 @@ extension AppDelegate {
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to Register for remote notification")
+    }
+    
+    func displayDurationFor(event: FutureEvent) -> Bool {
+        let counter = CountDownTimer(event: event)
+        let viewModel = CountDownViewModel(event: event, countDownTimer: counter)
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let countDownViewController = storyBoard.instantiateViewController(withIdentifier: "CountDownViewController") as? CountDownViewController else { return false }
+        
+        viewModel.delegate = countDownViewController
+        countDownViewController.viewModel = viewModel
+        countDownViewController.modalPresentationStyle = .formSheet
+        (window?.rootViewController as? UINavigationController)?.present(countDownViewController, animated: true)
+        return true
     }
 }
 
