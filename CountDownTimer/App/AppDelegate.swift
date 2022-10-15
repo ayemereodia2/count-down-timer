@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForPushNotification()
         // Check if launched from notification
         let notificationOption = launchOptions?[.remoteNotification]
-        
+        // TODO: Add support for future event notification on T - 1 day
         if
             let notification = notificationOption as? [String: AnyObject],
             let aps = notification["aps"] as? [String: AnyObject],
