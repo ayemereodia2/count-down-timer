@@ -34,6 +34,7 @@ class CountDownTimer {
         if let timer = timer {
             RunLoop.current.add(timer, forMode: .common)
         }
+        
         dateComponent(from: self.event)
     }
     
@@ -44,15 +45,23 @@ class CountDownTimer {
         if let days = breakdown.day {
             self.weeks = days / 7
             self.days = days % 7
-            delegate?.showPeriod(days: self.days, weeks: self.weeks)
+            if self.days >= 0 && self.weeks >= 0 {
+                delegate?.showPeriod(days: self.days, weeks: self.weeks)
+                self.hours = 24 - Calendar.current.component(.hour, from: event.dateTime)
+                self.minutes =  Calendar.current.component(.minute, from: event.dateTime)
+                self.seconds =  Calendar.current.component(.second, from: event.dateTime)
+            } else {
+                delegate?.showPeriod(days: 0, weeks: 0)
+            }
         }
-        
-        self.hours = 24 - Calendar.current.component(.hour, from: event.dateTime)
-        self.minutes =  Calendar.current.component(.minute, from: event.dateTime)
-        self.seconds =  Calendar.current.component(.second, from: event.dateTime)
     }
     
     @objc func updateCounter() {
+        if self.days < 0  {
+            delegate?.show(counter: "00:00:00")
+            return
+        }
+        
         if minutes == 60 {
             if hours > 0 {
                 hours -= 1
