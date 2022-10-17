@@ -13,21 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerForPushNotification()
-        // Check if launched from notification
-        let notificationOption = launchOptions?[.localNotification]
-        // TODO: Add support for future event notification on T - 1 day
-        if
-            let notification = notificationOption as? [String: AnyObject],
-            let aps = notification["aps"] as? [String: AnyObject],
-            let reminderEvent = FutureEvent(aps: aps) {
-           return displayDurationFor(event: reminderEvent)
-        }
-        
         return true
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
+        if let reminderEvent = FutureEvent(aps: userInfo) {
+            // TODO: Add support for future event notification on T - 1 day
+           displayDurationFor(event: reminderEvent)
+        }
     }
 }
 
@@ -60,18 +53,17 @@ extension AppDelegate {
         print("Failed to Register for remote notification")
     }
     
-    func displayDurationFor(event: FutureEvent) -> Bool {
+    func displayDurationFor(event: FutureEvent) {
         let counter = CountDownTimer(event: event)
         let viewModel = CountDownViewModel(event: event, countDownTimer: counter)
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let countDownViewController = storyBoard.instantiateViewController(withIdentifier: "CountDownViewController") as? CountDownViewController else { return false }
+        guard let countDownViewController = storyBoard.instantiateViewController(withIdentifier: "CountDownViewController") as? CountDownViewController else { return }
         
         viewModel.delegate = countDownViewController
         countDownViewController.viewModel = viewModel
         countDownViewController.modalPresentationStyle = .formSheet
         (window?.rootViewController as? UINavigationController)?.present(countDownViewController, animated: true)
-        return true
     }
 }
 

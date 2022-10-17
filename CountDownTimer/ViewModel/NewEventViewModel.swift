@@ -31,6 +31,7 @@ class NewEventViewModel {
     private func addNewEvent(event: FutureEvent) {
         homeRepository.create(futureEvent: event) { result in
             guard result else { return }
+            NewEventNotification.setupLocalNotifcation(with: event)
             self.delegate?.dismissAfterSaveView()
             self.homeDelegate?.reloadTableView()
         }
@@ -73,4 +74,3 @@ extension NewEventViewModel: ViewMonitor {
         addNewEvent(event: FutureEvent(name: eventName, dateTime: eventDate, isDone: false))
     }
 }
-

@@ -16,6 +16,7 @@
 		0468AEB928F2479900771A76 /* BackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEB828F2479900771A76 /* BackingView.swift */; };
 		0468AEBB28F24C4000771A76 /* CountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEBA28F24C4000771A76 /* CountDownViewController.swift */; };
 		0468AEBD28F24CA900771A76 /* CountDownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEBC28F24CA900771A76 /* CountDownViewModel.swift */; };
+		0491E1DA28FD7AF8003F7BFE /* NewEventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491E1D928FD7AF8003F7BFE /* NewEventNotification.swift */; };
 		04EC529228E263C200EB82A0 /* FutureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529128E263C200EB82A0 /* FutureEvent.swift */; };
 		04EC529528E264E400EB82A0 /* FutureEventRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529428E264E400EB82A0 /* FutureEventRealm.swift */; };
 		04EC529828E2655400EB82A0 /* FutureEventDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */; };
@@ -51,6 +52,7 @@
 		0468AEBA28F24C4000771A76 /* CountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewController.swift; sourceTree = "<group>"; };
 		0468AEBC28F24CA900771A76 /* CountDownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewModel.swift; sourceTree = "<group>"; };
 		048C95A428F37D3F00474D15 /* CountDownTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountDownTimer.entitlements; sourceTree = "<group>"; };
+		0491E1D928FD7AF8003F7BFE /* NewEventNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventNotification.swift; sourceTree = "<group>"; };
 		04EC529128E263C200EB82A0 /* FutureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEvent.swift; sourceTree = "<group>"; };
 		04EC529428E264E400EB82A0 /* FutureEventRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventRealm.swift; sourceTree = "<group>"; };
 		04EC529728E2655400EB82A0 /* FutureEventDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureEventDataModelProtocol.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0491E1D728FD7ABC003F7BFE /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				0491E1D928FD7AF8003F7BFE /* NewEventNotification.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		04EC528F28E2639300EB82A0 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		04F4D3D028E1097800B84E8D /* CountDownTimer */ = {
 			isa = PBXGroup;
 			children = (
+				0491E1D728FD7ABC003F7BFE /* Notification */,
 				048C95A428F37D3F00474D15 /* CountDownTimer.entitlements */,
 				041AF24F28E3875A00BD5136 /* View */,
 				041AF24828E37F6900BD5136 /* ViewModel */,
@@ -393,6 +404,7 @@
 				04EC529A28E266A100EB82A0 /* FutureEventRepository.swift in Sources */,
 				04EC529828E2655400EB82A0 /* FutureEventDataModelProtocol.swift in Sources */,
 				04F4D3D228E1097800B84E8D /* AppDelegate.swift in Sources */,
+				0491E1DA28FD7AF8003F7BFE /* NewEventNotification.swift in Sources */,
 				0468AEB928F2479900771A76 /* BackingView.swift in Sources */,
 				04F4D3D428E1097800B84E8D /* SceneDelegate.swift in Sources */,
 			);

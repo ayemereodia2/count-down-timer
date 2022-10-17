@@ -40,7 +40,7 @@ extension FutureEventModel {
 
 
 extension FutureEvent {
-    init?(aps: [String: AnyObject]) {
+    init?(aps: [AnyHashable: Any]) {
         guard let name = aps["name"] as? String,
               let dateTime = aps["dateTime"] as? Date,
               let isDone = aps["isDone"] as? Bool
