@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerForPushNotification()
         // Check if launched from notification
-        let notificationOption = launchOptions?[.remoteNotification]
+        let notificationOption = launchOptions?[.localNotification]
         // TODO: Add support for future event notification on T - 1 day
         if
             let notification = notificationOption as? [String: AnyObject],
@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
     }
 }
 

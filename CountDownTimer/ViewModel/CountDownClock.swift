@@ -47,9 +47,9 @@ class CountDownTimer {
             self.days = days % 7
             if self.days >= 0 && self.weeks >= 0 {
                 delegate?.showPeriod(days: self.days, weeks: self.weeks)
-                self.hours = 24 - Calendar.current.component(.hour, from: event.dateTime)
-                self.minutes =  Calendar.current.component(.minute, from: event.dateTime)
-                self.seconds =  Calendar.current.component(.second, from: event.dateTime)
+                self.hours = 24 - Calendar.current.component(.hour, from: Date.now)
+                self.minutes = 60 - Calendar.current.component(.minute, from: Date.now)
+                self.seconds =  60 - Calendar.current.component(.second, from: Date.now)
             } else {
                 delegate?.showPeriod(days: 0, weeks: 0)
             }
