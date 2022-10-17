@@ -72,4 +72,12 @@ extension NewEventViewController: NewEventViewDelegate {
     func dismissAfterSaveView() {
         dismiss(animated: true)
     }
+    
+    func showError() {
+        dismiss(animated: true)
+        let alert = UIAlertController(title: "Invalid date selection", message: "All date and time must be in the future", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true)
+    }
 }

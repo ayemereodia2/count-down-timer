@@ -10,6 +10,7 @@ import Foundation
 protocol NewEventViewDelegate: AnyObject {
     func saveButton(isEnabled: Bool)
     func dismissAfterSaveView()
+    func showError()
 }
 
 protocol HomeViewDelegate: AnyObject {
@@ -44,6 +45,7 @@ extension NewEventViewModel: ViewMonitor {
         guard let text = text, text.count > 5 else {
             self.delegate?.saveButton(isEnabled: false)
             self.eventName = nil
+            self.eventDate = nil
             return
         }
         self.eventName = text
@@ -55,8 +57,15 @@ extension NewEventViewModel: ViewMonitor {
     }
     
     func didChange(date: Date?) {
-        guard let eventDate = date else {
+        guard let eventDate = date, let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date.now) else {
             self.delegate?.saveButton(isEnabled: false)
+            self.eventName = nil
+            self.eventDate = nil
+            return
+        }
+        
+        if eventDate <= yesterday {
+            self.delegate?.showError()
             return
         }
                 
