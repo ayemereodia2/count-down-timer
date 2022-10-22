@@ -14,7 +14,7 @@ class NewEventNotification {
         let content = UNMutableNotificationContent()
         var trigger: UNTimeIntervalNotificationTrigger
         let data = formatFutureEvent(event: event)
-        content.title = "IT'S ALMOST TIME!!!"
+        content.title = "IT'S TIME!!!"
         content.subtitle = event.name
         content.userInfo = data
         content.sound = UNNotificationSound.defaultRingtone
