@@ -34,12 +34,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addEventButtonTap(_ sender: UIButton) {
-       let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let newEventViewController = storyBoard.instantiateViewController(withIdentifier: "NewEventViewController") as? NewEventViewController else { return }
+       let newEventViewController =  NewEventViewController()
         
         newEventViewController.viewModel = newEventViewModel
-        newEventViewController.modalPresentationStyle = .formSheet
-        self.present(newEventViewController, animated: true)
+        //newEventViewController.modalPresentationStyle = .formSheet
+        navigationController?.present(newEventViewController, animated: true)
     }
 }
 

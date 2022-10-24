@@ -66,6 +66,10 @@ private class MockNewEventRepository: NewEventRepositoryProtocol {
 
 
 private class MockNewEventViewDelegate: NewEventViewDelegate {
+    func showError() {
+        
+    }
+    
     var dismissAfterSaveViewDidCall = false
     var dismissAfterSaveViewCount = 0
     

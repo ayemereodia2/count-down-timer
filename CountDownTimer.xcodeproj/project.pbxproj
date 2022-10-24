@@ -13,6 +13,8 @@
 		041AF25128E3878100BD5136 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF25028E3878100BD5136 /* NewEventViewController.swift */; };
 		044555C628EE5081001B1299 /* CountDownClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044555C528EE5081001B1299 /* CountDownClock.swift */; };
 		04513ED128F237E0006BC0C7 /* NewEventViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04513ED028F237E0006BC0C7 /* NewEventViewModelTest.swift */; };
+		0459E3CA2906F0BE00C0E136 /* CountDownTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459E3C92906F0BE00C0E136 /* CountDownTimerUITests.swift */; };
+		0459E3CC2906F0BE00C0E136 /* CountDownTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0459E3CB2906F0BE00C0E136 /* CountDownTimerUITestsLaunchTests.swift */; };
 		0468AEB928F2479900771A76 /* BackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEB828F2479900771A76 /* BackingView.swift */; };
 		0468AEBB28F24C4000771A76 /* CountDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEBA28F24C4000771A76 /* CountDownViewController.swift */; };
 		0468AEBD28F24CA900771A76 /* CountDownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468AEBC28F24CA900771A76 /* CountDownViewModel.swift */; };
@@ -32,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0459E3CD2906F0BE00C0E136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F4D3C628E1097800B84E8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4D3CD28E1097800B84E8D;
+			remoteInfo = CountDownTimer;
+		};
 		04EC52A328E26DF600EB82A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04F4D3C628E1097800B84E8D /* Project object */;
@@ -48,6 +57,9 @@
 		041AF25028E3878100BD5136 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		044555C528EE5081001B1299 /* CountDownClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownClock.swift; sourceTree = "<group>"; };
 		04513ED028F237E0006BC0C7 /* NewEventViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewModelTest.swift; sourceTree = "<group>"; };
+		0459E3C72906F0BE00C0E136 /* CountDownTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountDownTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0459E3C92906F0BE00C0E136 /* CountDownTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimerUITests.swift; sourceTree = "<group>"; };
+		0459E3CB2906F0BE00C0E136 /* CountDownTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0468AEB828F2479900771A76 /* BackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackingView.swift; sourceTree = "<group>"; };
 		0468AEBA28F24C4000771A76 /* CountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewController.swift; sourceTree = "<group>"; };
 		0468AEBC28F24CA900771A76 /* CountDownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewModel.swift; sourceTree = "<group>"; };
@@ -73,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0459E3C42906F0BE00C0E136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EC529C28E26DF600EB82A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +147,15 @@
 				0468AEBA28F24C4000771A76 /* CountDownViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0459E3C82906F0BE00C0E136 /* CountDownTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0459E3C92906F0BE00C0E136 /* CountDownTimerUITests.swift */,
+				0459E3CB2906F0BE00C0E136 /* CountDownTimerUITestsLaunchTests.swift */,
+			);
+			path = CountDownTimerUITests;
 			sourceTree = "<group>";
 		};
 		0491E1D728FD7ABC003F7BFE /* Notification */ = {
@@ -188,6 +216,7 @@
 			children = (
 				04F4D3D028E1097800B84E8D /* CountDownTimer */,
 				04EC52A028E26DF600EB82A0 /* CountDownTimerTests */,
+				0459E3C82906F0BE00C0E136 /* CountDownTimerUITests */,
 				04F4D3CF28E1097800B84E8D /* Products */,
 				F274263AB2926E6F659C5D6B /* Pods */,
 				52A87F76EC651F08CADA45F1 /* Frameworks */,
@@ -199,6 +228,7 @@
 			children = (
 				04F4D3CE28E1097800B84E8D /* CountDownTimer.app */,
 				04EC529F28E26DF600EB82A0 /* CountDownTimerTests.xctest */,
+				0459E3C72906F0BE00C0E136 /* CountDownTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +270,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0459E3C62906F0BE00C0E136 /* CountDownTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0459E3D12906F0BE00C0E136 /* Build configuration list for PBXNativeTarget "CountDownTimerUITests" */;
+			buildPhases = (
+				0459E3C32906F0BE00C0E136 /* Sources */,
+				0459E3C42906F0BE00C0E136 /* Frameworks */,
+				0459E3C52906F0BE00C0E136 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0459E3CE2906F0BE00C0E136 /* PBXTargetDependency */,
+			);
+			name = CountDownTimerUITests;
+			productName = CountDownTimerUITests;
+			productReference = 0459E3C72906F0BE00C0E136 /* CountDownTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		04EC529E28E26DF600EB82A0 /* CountDownTimerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04EC52A728E26DF600EB82A0 /* Build configuration list for PBXNativeTarget "CountDownTimerTests" */;
@@ -287,6 +335,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					0459E3C62906F0BE00C0E136 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 04F4D3CD28E1097800B84E8D;
+					};
 					04EC529E28E26DF600EB82A0 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 04F4D3CD28E1097800B84E8D;
@@ -311,11 +363,19 @@
 			targets = (
 				04F4D3CD28E1097800B84E8D /* CountDownTimer */,
 				04EC529E28E26DF600EB82A0 /* CountDownTimerTests */,
+				0459E3C62906F0BE00C0E136 /* CountDownTimerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0459E3C52906F0BE00C0E136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EC529D28E26DF600EB82A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,6 +438,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0459E3C32906F0BE00C0E136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0459E3CC2906F0BE00C0E136 /* CountDownTimerUITestsLaunchTests.swift in Sources */,
+				0459E3CA2906F0BE00C0E136 /* CountDownTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04EC529B28E26DF600EB82A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +482,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0459E3CE2906F0BE00C0E136 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F4D3CD28E1097800B84E8D /* CountDownTimer */;
+			targetProxy = 0459E3CD2906F0BE00C0E136 /* PBXContainerItemProxy */;
+		};
 		04EC52A428E26DF600EB82A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 04F4D3CD28E1097800B84E8D /* CountDownTimer */;
@@ -440,6 +514,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0459E3CF2906F0BE00C0E136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woxi.app.CountDownTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CountDownTimer;
+			};
+			name = Debug;
+		};
+		0459E3D02906F0BE00C0E136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB5YMG5W6W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woxi.app.CountDownTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CountDownTimer;
+			};
+			name = Release;
+		};
 		04EC52A528E26DF600EB82A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -662,6 +770,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0459E3D12906F0BE00C0E136 /* Build configuration list for PBXNativeTarget "CountDownTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0459E3CF2906F0BE00C0E136 /* Debug */,
+				0459E3D02906F0BE00C0E136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04EC52A728E26DF600EB82A0 /* Build configuration list for PBXNativeTarget "CountDownTimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

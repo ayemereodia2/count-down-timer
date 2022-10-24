@@ -45,6 +45,10 @@ private class HomeRepositoryMock: HomeRepositoryProtocol {
 }
 
 private class HomeViewDelegateMock: HomeViewDelegate {
+    func setTitle(title: String) {
+        
+    }
+    
     var showSavedEventsDidCall = false
     var showSavedEventsDidCount = 0
 
